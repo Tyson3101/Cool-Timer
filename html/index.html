@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1 id="time">
+      <span id="hour"></span><span id="min"></span><span id="sec"></span>
+    </h1>
+    <div>
+      <form>
+        <label for="hours">Hours</label>
+        <input type="number" name="hours" id="hoursInput" />
+        <label for="min">Minutes</label>
+        <input type="number" max="60" name="min" id="minInput" value="1" />
+        <label for="sec">Seconds</label>
+        <input type="number" max="60" name="sec" id="secInput" value="3" />
+      </form>
+      <button
+        style="padding: 1.5vh"
+        onclick="start({ hours: Number(document.getElementById(`hoursInput`).value || `0`), mins: Number(Number(document.getElementById(`minInput`).value || `0`)),secs: Number(Number(document.getElementById(`secInput`).value || `0`))})"
+      >
+        Start Timer
+      </button>
+    </div>
+  </body>
+</html>
